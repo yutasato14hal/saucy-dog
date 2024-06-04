@@ -1,0 +1,498 @@
+/*
+node-sass scssstyle.scss style.css
+*/
+
+body {
+  color: #0e0400;
+  /* width: 100vw; */
+}
+body{
+background-color: #ece7e0;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  list-style: none;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+img {
+  width: 100%;
+}
+main{
+  padding-bottom: 100px;
+}
+/**************************
+main-header
+**************************/
+header{
+  width: 100%;
+  height: 10vh;
+  color: #474747;
+  position: absolute;
+  bottom: 0;
+  opacity: 0.85;
+  z-index: 1;
+}
+header .inner {
+  height: 100%;
+  margin: 0px 20px;
+  position: absolute;
+  padding: 0;
+  
+}
+nav.inner {
+  flex-wrap: wrap;
+  position: absolute;
+  width: 100%;
+  background-color: #fffffff1;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+header nav ul {
+  margin-top: 30px;
+  width: 100%;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  padding-left: 80px;
+  padding-bottom: 10px;
+  background-color: #fffffff1;
+}
+header nav ul li {
+  font-size: 16px;
+  font-family: "RobotoCondensed";
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 0 50px;
+}
+nav.inner ul li a {
+  color: #000000;
+}
+nav.inner ul li a:hover {
+  color: rgb(173, 173, 173);
+}
+/**************************
+/main-header
+**************************/
+
+/*******************************
+.footer
+*********************************/
+@media print, screen and (min-width: 768px) {
+  footer {
+    padding: 40px 70px;
+    background-color: #ffffffa2;
+  }
+  footer .support-btn {
+    display: none;
+  }
+  footer .pc-two-col {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+  footer img.logo2 {
+    width: 10vw;
+  }
+  footer .copyright {
+    margin-top: 40px;
+    font-size: 11px;
+  }
+  footer .pc-right {
+    width: 50%;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  footer .upper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+  footer .links1 {
+    display: none;
+  }
+  .page--home footer .links1 {
+    display: flex;
+    justify-content: space-between;
+  }
+  footer .links1 li {
+    font-family: "RobotoCondensed";
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 1px;
+  }
+  footer .links1 li + li {
+    margin-left: 38px;
+  }
+  footer .links1 li a {
+    color: #59768a;
+  }
+  footer .links1 li a span {
+    font-size: 12px;
+    display: inline-block;
+    vertical-align: 1px;
+  }
+
+  footer .sns {
+    display: flex;
+    align-items: center;
+    margin-left: 60px;
+  }
+  footer .sns li + li {
+    margin-left: 40px;
+  }
+  footer .sns .f {
+    width: 10px;
+  }
+  footer .sns .t {
+    width: 24px;
+  }
+  footer .sns .i {
+    width: 21px;
+  }
+  footer .sns .l {
+    width: 25px;
+  }
+  footer .lower {
+    margin-top: 45px;
+  }
+}
+
+/*==================================================
+スライダーのためのcss
+===================================*/
+.slider {
+  /*横幅94%で左右に余白を持たせて中央寄せ*/
+  width: 94%;
+  margin: 0 auto;
+  margin-top: 140px;
+  margin-bottom: 40px;
+}
+
+.slider img {
+  width: 30vw; /*スライダー内の画像を30vwにしてレスポンシブ化*/
+  height: auto;
+}
+
+.slider .slick-slide {
+  transform: scale(0.8); /*左右の画像のサイズを80%に*/
+  transition: all 0.5s; /*拡大や透過のアニメーションを0.5秒で行う*/
+  opacity: 0.5; /*透過50%*/
+}
+
+.slider .slick-slide.slick-center {
+  transform: scale(1); /*中央の画像のサイズだけ等倍に*/
+  opacity: 1; /*透過なし*/
+}
+
+/*矢印の設定*/
+
+/*戻る、次へ矢印の位置*/
+.slick-prev,
+.slick-next {
+  position: absolute; /*絶対配置にする*/
+  top: 42%;
+  cursor: pointer; /*マウスカーソルを指マークに*/
+  outline: none; /*クリックをしたら出てくる枠線を消す*/
+  border-top: 2px solid #666; /*矢印の色*/
+  border-right: 2px solid #666; /*矢印の色*/
+  height: 15px;
+  width: 15px;
+}
+
+.slick-prev {
+  /*戻る矢印の位置と形状*/
+  left: -1.5%;
+  transform: rotate(-135deg);
+}
+
+.slick-next {
+  /*次へ矢印の位置と形状*/
+  right: -1.5%;
+  transform: rotate(45deg);
+}
+
+/*ドットナビゲーションの設定*/
+
+.slick-dots {
+  text-align: center;
+  margin: 20px 0 0 0;
+}
+
+.slick-dots li {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.slick-dots button {
+  color: transparent;
+  outline: none;
+  width: 8px; /*ドットボタンのサイズ*/
+  height: 8px; /*ドットボタンのサイズ*/
+  display: block;
+  border-radius: 50%;
+  background: #ccc; /*ドットボタンの色*/
+}
+
+.slick-dots .slick-active button {
+  background: #333; /*ドットボタンの現在地表示の色*/
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+}
+#container #header-img img {
+  width: 100%;
+  height: 90vh;
+  object-fit: cover;
+}
+.logo {
+  width: 25%;
+  color: #ffffff;
+  background-color: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  position: absolute;
+  top: 30%;
+  left: 39%;
+}
+
+section.section_container {
+  margin: 0 auto;
+  padding-top: 80px;
+  width: 45vw;
+}
+section.section_container1{
+  margin: 0 auto;
+  padding: 60px 0px;
+  width: 35vw;
+}
+
+/*******************************
+.pick_up
+*********************************/
+
+.section_title {
+  align-items: center;
+  text-align: center;
+}
+.section_title h2 {
+  /* border-bottom: #474747 solid 1px; */
+  font-size: 30px;
+  font-weight:bolder;
+  margin-bottom: 50px;
+}
+div.flex_pick_up {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+div.lazysunday {
+  width: 50%;
+  margin-top: 50px;
+}
+div.lazysunday img {
+  width: 100%;
+  border-radius: 6px;
+}
+.button02{
+  margin-top: 40px;
+}
+.button02 a {
+  margin: 0 auto;
+  padding: 0.7em 2em;
+  color: #333;
+  font-size: 18px;
+  font-weight: 700;
+  background-color: #ffffff;
+  border-radius: 50vh;
+}
+
+.button02 a::before {
+  content: "▶ ";
+  width: 5px;
+  height: 5px;
+  transform: rotate(45deg);
+}
+
+.button02 a:hover {
+  text-decoration: none;
+  background-color: #bbbbbb;
+}
+
+@media (min-width: 1024px) {
+  .lazy {
+    width: 50%;
+  }
+}
+/***************************
+top-Album
+******************************/
+h3{
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  margin: 0 auto;
+  padding-bottom: 20px;
+  font-size: 17px;
+}
+.lazy {
+  width: 40%;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  list-style: none;
+  font-size: 16px;
+  padding-left: 20px;
+}
+.lazy li {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0 16px 0;
+  border-bottom: 1px solid #888888;
+  position: relative;
+}
+.lazy li p {
+  text-decoration: none;
+  color: #555;
+}
+.lazy li span {
+  padding-left: 20px;
+  font-size: 16px;
+  color: #555;
+}
+
+/*******************************
+news
+********************************/
+
+
+.List {
+  border-bottom: 1px solid #868686;
+  padding: 10px 0;
+  margin-bottom: 10px;
+}
+
+.List ul{
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.List li {
+  display: block;
+  margin: 0 10px;
+  margin-bottom: 20px;
+}
+
+.List li:nth-child(-n + 3) {
+  flex-basis: 130px;
+}
+
+.List li:nth-child(2) {
+  color: #fff;
+  font-size: 12px;
+  padding: 5px 5px;
+  text-align: center;
+  align-items: center;
+  background-color: #59768a;
+}
+
+.List p {
+  position: relative;
+  font-size: 17px;
+  padding-left: 10px;
+}
+.List p a {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  text-indent: 100%; /*テキスト非表示*/
+  white-space: nowrap; /*テキスト非表示*/
+  overflow: hidden; /*テキスト非表示*/
+}
+.List p a:hover {
+  opacity: 0.6;
+  filter: alpha(opacity=60);
+  -ms-filter: "alpha( opacity=60 )";
+  background: #ffffff;
+}
+
+
+a.link-list{
+  color: #000;
+}
+
+/*==================================================
+共通　横並びのための設定
+===================================*/
+
+.gnavi{
+  display: flex;
+  flex-wrap: wrap;/*スマホ表示折り返し用なのでPCのみなら不要*/
+  margin:0 0 50px 0;
+  list-style: none;
+}
+
+.gnavi li a{
+  display: block;
+  padding:10px 30px;
+  text-decoration: none;
+  color: #333;
+}
+
+.gnavi li{
+  margin-bottom:20px;
+}
+
+/*==================================================
+　5-3-1 中心から外に線が伸びる（下部）
+===================================*/
+
+.gnavi li a{
+  /*線の基点とするためrelativeを指定*/
+position: relative;
+}
+
+.gnavi li.current a,
+.gnavi li a:hover{
+color:#000000;
+}
+
+.gnavi li a::after {
+  content: '';
+  /*絶対配置で線の位置を決める*/
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  /*線の形状*/
+  width: 80%;
+  height: 1px;
+  background:#000000;
+  /*アニメーションの指定*/
+  transition: all .3s;
+  transform: scale(0, 1);/*X方向0、Y方向1*/
+  transform-origin: center top;/*上部中央基点*/
+}
+
+/*現在地とhoverの設定*/
+.gnavi li.current a::after,
+.gnavi li a:hover::after {
+  transform: scale(1, 1);/*X方向にスケール拡大*/
+}
+
+
